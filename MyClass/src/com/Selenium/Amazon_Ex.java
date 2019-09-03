@@ -1,6 +1,7 @@
 package com.Selenium;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,6 +18,7 @@ public class Amazon_Ex {
 		
 		//Opened amazon website
 		driver.get("https://www.amazon.in/");
+		driver.manage().window().maximize();
 		
 		Thread.sleep(1000);
 		
@@ -60,7 +62,50 @@ public class Amazon_Ex {
 		
 		System.out.println("Cart screen opened");
 		
-		driver.quit();
+		Thread.sleep(1500);
+		
+		//Click on the Proceed to buy button
+		driver.findElement(By.xpath("//input[@name='proceedToCheckout']")).click();
+		
+		Thread.sleep(1000);
+		
+		//if user is not login then loged In otherwise proceed to next screen
+		WebElement email = driver.findElement(By.xpath("//input[@id='ap_email']"));
+		email.sendKeys("8619592802");
+		
+		driver.findElement(By.xpath("//input[@id='continue']")).click(); // click on the Continue button
+		
+		WebElement password = driver.findElement(By.xpath("//input[@id='ap_password']"));
+		password.sendKeys("shilpa@123");
+		
+		driver.findElement(By.xpath("//input[@id='signInSubmit']")).click(); // click on the Login button
+		
+		System.out.println("Login Successfull!");
+		
+		Thread.sleep(1500);
+		
+		//Select delivery address
+		driver.findElement(By.xpath("//a[contains(text(),'Deliver to this address')]")).click();
+		
+		Thread.sleep(1500);
+		//Click on the Continue button
+		driver.findElement(By.xpath("//div[contains(@class,'a-row a-spacing-medium')]//input[@class='a-button-text']")).click();
+		System.out.println("Opened Payment screen");
+		
+		Thread.sleep(1500);
+		
+		//choose radio button for payment info
+		WebElement radiobutton = driver.findElement(By.linkText("Add Debit/Credit/ATM Card"));
+		radiobutton.click();
+		//System.out.println(radiobutton.size());
+		
+		
+		
+		Thread.sleep(1500);
+		
+		
+		
+		//driver.quit();
 	}
 
 }
