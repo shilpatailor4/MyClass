@@ -95,9 +95,14 @@ public class Amazon_Ex {
 		Thread.sleep(1500);
 		
 		//choose radio button for payment info
-		WebElement radiobutton = driver.findElement(By.linkText("Add Debit/Credit/ATM Card"));
+		//driver.switchTo().frame(1);
+		WebElement radiobutton = driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/label[1]/input[1]"));
 		radiobutton.click();
-		//System.out.println(radiobutton.size());
+		driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]")).sendKeys("Shilpa");
+		driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]")).sendKeys("pp-Q2-59");
+		
+		//Select dropdown value
+		
 		
 		
 		
