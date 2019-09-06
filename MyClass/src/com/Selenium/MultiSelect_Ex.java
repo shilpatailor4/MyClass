@@ -10,7 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class MultiSelect_Ex {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {/// program not run
+		
 		
 		System.setProperty("webdriver.gecko.driver", "E:\\\\Shilpa\\\\Selenium\\\\Selenium Driver\\\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
@@ -18,13 +19,14 @@ public class MultiSelect_Ex {
 		//Opened amazon website
 		driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_multiple2");
 		driver.manage().window().maximize();
-		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
-		WebElement elements = driver.findElement(By.xpath("/html[1]/body[1]/form[1]/select[1]"));
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		Select dropdown = new Select(elements);
-		dropdown.selectByVisibleText("Apple");
-		dropdown.selectByVisibleText("Orange");
+		
+		driver.switchTo().frame(0);
+		Select elements = new Select(driver.findElement(By.xpath("//select[@id='mySelect']")));
+		
+		//Select dropdown = new Select(elements);
+		elements.selectByVisibleText("Apple");
+		elements.selectByVisibleText("Orange");
 
 	}
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Amazon_Ex {
 
@@ -33,12 +34,12 @@ public class Amazon_Ex {
 		
 		System.out.println("Search result screen opened");
 		
-		/*
+		
 		  //scroll down the page by  1000 pixel vertical
 		  JavascriptExecutor js = (JavascriptExecutor) driver;
 		  js.executeScript("window.scrollBy(0,1000)");
 		  
-        */
+      
 		
 		//Click on the first search product
 		driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[2]/div/span[3]/div[1]/div[1]/div/div/div/div/div/div[2]/div[2]/div/div[1]/div/div/div[1]/h2/a")).click();
@@ -95,15 +96,32 @@ public class Amazon_Ex {
 		Thread.sleep(1500);
 		
 		//choose radio button for payment info
-		//driver.switchTo().frame(1);
+		/*
 		WebElement radiobutton = driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/label[1]/input[1]"));
 		radiobutton.click();
 		driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]")).sendKeys("Shilpa");
-		driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]")).sendKeys("pp-Q2-59");
+		driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]")).sendKeys("4111111111111111");
 		
+		//Thread.sleep(2000);
 		//Select dropdown value
+		WebElement date = driver.findElement(By.cssSelector("#pp-Ep-64"));
+		Select dropdown = new Select(date);
+		dropdown.selectByVisibleText("02");
 		
+		//Thread.sleep(2000);
 		
+		WebElement year = driver.findElement(By.xpath("//span[@id='pp-Ep-65']//span[@class='a-button-text a-declarative']"));
+		Select dropdown1 = new Select(year);
+		dropdown.selectByVisibleText("2022");
+		
+		//Click on the Add to Cart button
+		driver.findElement(By.xpath("//input[@name='ppw-widgetEvent:AddCreditCardEvent']")).click();
+		
+		*/
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/div[5]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[1]/div[1]/div[2]/div[6]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/input[1]")).click();
+		
+		//driver.findElement(By.xpath("/html/body/div[5]/div[1]/div[2]/div[2]/div/div[2]/div[1]/form/div[2]/div/div/div/span/span/input")).click();
 		
 		
 		Thread.sleep(1500);

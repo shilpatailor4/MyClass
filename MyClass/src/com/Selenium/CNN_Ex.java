@@ -34,6 +34,9 @@ public class CNN_Ex {
 		/*String actualTitle = driver.getTitle();
 		String expectedTitle = "'Stuck' storm to devastate Bahamas for several more hours";
 		assertEquals(expectedTitle,actualTitle);   */
+		
+		//assertTrue(driver.getTitle().contains("Title of Page"));
+		
 		Thread.sleep(1000);
 		driver.close();
 
