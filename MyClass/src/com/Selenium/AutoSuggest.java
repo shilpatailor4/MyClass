@@ -23,6 +23,8 @@ public class AutoSuggest {
 		
 		List<WebElement> list = driver.findElements(By.xpath("//div[@class='aajZCb']/ul/li"));
 		System.out.println("Size of all search suggesstion: "+list.size());
+		System.out.println("........................ \n");
+		System.out.println("Search keyword suggesstions are: \n");
 		
 		for(WebElement suggestion : list)
 		{
