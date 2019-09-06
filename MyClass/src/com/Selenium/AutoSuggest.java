@@ -21,6 +21,7 @@ public class AutoSuggest {
 		
 		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("Hello");
 		
+		//Print all suggestions keyword
 		List<WebElement> list = driver.findElements(By.xpath("//div[@class='aajZCb']/ul/li"));
 		System.out.println("Size of all search suggesstion: "+list.size());
 		System.out.println("........................ \n");
@@ -29,6 +30,16 @@ public class AutoSuggest {
 		for(WebElement suggestion : list)
 		{
 			System.out.println(suggestion.getText());
+		}
+		
+		//Choose specific keyword
+		System.out.println("\n");
+		
+		List<WebElement> list1 = driver.findElements(By.xpath("//div[@class='aajZCb']/ul/li[7]"));
+
+		for(WebElement suggestion : list1)
+		{
+			System.out.println("Select 7th position keyword: "+suggestion.getText());
 		}
 		
 		Thread.sleep(2000);
