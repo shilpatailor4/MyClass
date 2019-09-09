@@ -1,8 +1,10 @@
 package com.Selenium;
 
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,12 +23,18 @@ public class MultiSelect_Ex {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
-		driver.switchTo().frame(0);
-		Select elements = new Select(driver.findElement(By.xpath("//select[@id='mySelect']")));
 		
-		//Select dropdown = new Select(elements);
-		elements.selectByVisibleText("Apple");
-		elements.selectByVisibleText("Orange");
+		driver.switchTo().frame(0);
+		driver.findElement(By.xpath("//button[contains(text(),'Try it')]")).click();
+		WebElement elements = driver.findElement(By.xpath("//select[@id='mySelect']"));
+		//elements.sendKeys(Keys.CONTROL, "Apple");
+		//elements.sendKeys(Keys.CONTROL, "Orange");
+		
+		Select dropdown = new Select(elements);
+		dropdown.selectByVisibleText("Apple");
+		dropdown.selectByVisibleText("Orange"); 
+		
+		
 
 	}
 
